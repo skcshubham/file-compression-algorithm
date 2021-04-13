@@ -1,1 +1,1 @@
-Building a Compression ALgorithm
+Trying to build a compression Algorithm.
