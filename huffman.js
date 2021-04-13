@@ -1,4 +1,4 @@
-import BinaryHeap from "./heap.js";
+import BinaryHeap from "./maxHeap.js";
 
 class Huffman {
 	// function to encode input data into compressed data
