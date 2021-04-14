@@ -127,6 +127,20 @@ class Huffman {
 			}
 			// finding ASCII character equivalent for ASCII value of each word and storing it in result
 			result = result + String.fromCharCode(num);
+
+			// Concatenating required information to decoded tree which will be displayed
+			// converting huffman tree to string and passing it as result
+			let final_res =
+				this.stringify(huffman_encoder) + "\n" + rem + "\n" + result;
+			let info =
+				"Compression ratio achieved : " + data.length / final_res.length;
+			info =
+				"Compression is complete and File is sent to be downloaded!" +
+				"\n" +
+				info;
+
+			// return encoded data, huffman tree and info from the function
+			return [final_res, this.display(huffman_encoder, false), info];
 		}
 	}
 }
