@@ -1,6 +1,29 @@
 import BinaryHeap from "./maxHeap.js";
 
 class Huffman {
+	// Function to display the huffman
+	display(node, modify, index = 1) {
+		// Preorder tree traversal
+		if (modify == true) {
+			node = ["", node];
+			if (node[1].length === 1) {
+				node[1] = node[1][0];
+			}
+		}
+
+		if (typeof node[1] === "string") {
+			return String(index) + " = " + node[1];
+		}
+
+		// left node is twice of the index
+		let left = this.display(node[1][0], modify, index * 2);
+		// right node is twice of index + 1, property of heap
+		let right = this.display(node[1][1], modify, index * 2 + 1);
+		let res =
+			String(index * 2) + " <= " + index + " => " + String(index * 2 + 1);
+		return res + "\n" + left + "\n" + right;
+	}
+
 	// Function to convert huffman tree into string, simple inorder tree traversal
 	stringify(node) {
 		// Encoding Huffman tree
